@@ -27,7 +27,7 @@ const ArticleCard3: React.FC<ArticleCard3Props> = ({
       <p className="text-uppercase text-muted fw-semibold mb-1">{category}</p>
 
       {/* Title */}
-      <h3 className="fw-bold mb-2 ArticleCard3-title">{title}</h3>
+      <p className="fw-bold mb-2 ArticleCard3-title">{title}</p>
 
       {/* Author */}
       <p className="text-uppercase text-muted fw-semibold mb-2">Reporter</p>

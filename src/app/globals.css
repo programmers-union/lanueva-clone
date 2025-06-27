@@ -292,7 +292,7 @@ h2:hover{
 }
 
 
-/* ......................Article card styles............................ */
+/* ......................Article card3 styles............................ */
 
 
 .ArticleCard3-container {
@@ -324,4 +324,47 @@ h2:hover{
 .ArticleCard3-desc {
   font-size: 0.95rem;
   color: #333;
+}
+
+
+
+/* ...............ArticleCard4 styles................................. */
+
+
+.ArticleCard4-container {
+  max-width: 700px;
+}
+
+.ArticleCard4-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.ArticleCard4-play-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.25rem;
+  padding: 4px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.ArticleCard4-title {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 576px) {
+  .ArticleCard4-title {
+    font-size: 0.85rem;
+  }
+
+  .ArticleCard4-play-icon {
+    font-size: 1rem;
+    padding: 2px 6px;
+  }
 }
