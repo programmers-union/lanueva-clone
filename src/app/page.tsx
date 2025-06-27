@@ -7,6 +7,7 @@ import scienceData from "../../public/data/science.json";
 import healthData from "../../public/data/health.json";
 import sportsData from "../../public/data/sports.json";
 import ArticleCard4 from "./components/ArticleCard4";
+import technologyData from "../../public/data/technology.json";
 
 export default function Home() {
   return (
@@ -130,7 +131,7 @@ export default function Home() {
 
         <div className="row">
           <div className="col-lg-6">
-           <ArticleCard3
+            <ArticleCard3
               image={politicsData[5].image}
               category={politicsData[5].category}
               title={politicsData[5].title}
@@ -138,28 +139,167 @@ export default function Home() {
             />
           </div>
           <div className="col-lg-6">
-             <ArticleCard4
-        image={politicsData[2].image}  // Place this in public/images/
-        category={politicsData[2].category}
-        title={politicsData[2].title}
-        author="Reporter"
-      />
-       <ArticleCard4
-        image={politicsData[4].image}  // Place this in public/images/
-        category={politicsData[4].category}
-        title={politicsData[4].title}
-        author="Reporter"
-      />
-       <ArticleCard4
-        image={politicsData[3].image} // Place this in public/images/
-        category={politicsData[3].category}
-        title={politicsData[3].title}
-        author="Reporter"
-      />
+            <ArticleCard4
+              image={politicsData[2].image} // Place this in public/images/
+              category={politicsData[2].category}
+              title={politicsData[2].title}
+              author="Reporter"
+            />
+            <ArticleCard4
+              image={politicsData[4].image} // Place this in public/images/
+              category={politicsData[4].category}
+              title={politicsData[4].title}
+              author="Reporter"
+            />
+            <ArticleCard4
+              image={politicsData[6].image} // Place this in public/images/
+              category={politicsData[6].category}
+              title={politicsData[6].title}
+              author="Reporter"
+            />
           </div>
         </div>
-                <div className="row py-5">
+        <div className="row py-5">
           <div className="col-lg-4">
+            <ArticleCard2
+              image={scienceData[6].image}
+              title={scienceData[6].title}
+              category={scienceData[6].category}
+              fontSize="1.10rem"
+            />
+          </div>
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={scienceData[4].image}
+              title={scienceData[4].title}
+              category={scienceData[4].category}
+              fontSize="1.10rem"
+            />
+          </div>
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={scienceData[5].image}
+              title={scienceData[5].title}
+              category={scienceData[5].category}
+              fontSize="1.10rem"
+            />
+          </div>
+        </div>
+
+        <div className="row py-5">
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={businessData[4].image}
+              title={businessData[4].title}
+              category={businessData[4].category}
+              fontSize="1.10rem"
+            />
+          </div>
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={businessData[5].image}
+              title={businessData[5].title}
+              category={businessData[5].category}
+              fontSize="1.10rem"
+            />
+          </div>
+        </div>
+        <div className="row py-5">
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={businessData[6].image}
+              title={businessData[6].title}
+              category={businessData[6].category}
+              fontSize="1.10rem"
+            />
+          </div>
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={businessData[7].image}
+              title={businessData[7].title}
+              category={businessData[7].category}
+              fontSize="1.10rem"
+            />
+          </div>
+        </div>
+                  <div className="col-lg-12 border-black border-bottom">
+            <h2>Politics</h2>
+          </div>
+        <div className="row py-3">
+          <div className="col-lg-6">
+            <ArticleCard3
+              image={politicsData[8].image}
+              category={politicsData[8].category}
+              title={politicsData[8].title}
+              shortdescription={politicsData[8].shortdescription}
+            />
+          </div>
+          <div className="col-lg-6">
+            <ArticleCard4
+              image={politicsData[2].image} // Place this in public/images/
+              category={politicsData[2].category}
+              title={politicsData[2].title}
+              author="Reporter"
+            />
+            <ArticleCard4
+              image={politicsData[4].image} // Place this in public/images/
+              category={politicsData[4].category}
+              title={politicsData[4].title}
+              author="Reporter"
+            />
+            <ArticleCard4
+              image={politicsData[6].image} // Place this in public/images/
+              category={politicsData[6].category}
+              title={politicsData[6].title}
+              author="Reporter"
+            />
+          </div>
+        </div>
+        
+                  <div className="col-lg-12 border-black border-bottom">
+            <h2>Technology</h2>
+          </div>
+        <div className="col-lg-8 py-3">
+          <ArticleCard3
+            image={technologyData[0].image}
+            category={technologyData[0].category}
+            title={technologyData[0].title}
+            shortdescription={technologyData[0].shortdescription}
+          />
+                  <div className="row py-5">
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={technologyData[1].image}
+              title={technologyData[1].title}
+              category={technologyData[1].category}
+              fontSize="1.10rem"
+            />
+          </div>
+          <div className="col-lg-4">
+            <ArticleCard2
+              image={technologyData[2].image}
+              title={technologyData[2].title}
+              category={technologyData[2].category}
+              fontSize="1.10rem"
+            />
+          </div>
+                    <div className="col-lg-4">
+            <ArticleCard2
+              image={technologyData[3].image}
+              title={technologyData[3].title}
+              category={technologyData[3].category}
+              fontSize="1.10rem"
+            />
+          </div>
+        </div>
+        </div>
+         <div className="row">
+          <div className="col-lg-12 border-black border-bottom">
+            <h2>science</h2>
+          </div>
+         </div>
+                 <div className="row py-4">
+          <div className="col-lg-3">
             <ArticleCard2
               image={scienceData[1].image}
               title={scienceData[1].title}
@@ -167,7 +307,7 @@ export default function Home() {
               fontSize="1.10rem"
             />
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-3">
             <ArticleCard2
               image={scienceData[0].image}
               title={scienceData[0].title}
@@ -175,7 +315,7 @@ export default function Home() {
               fontSize="1.10rem"
             />
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-3">
             <ArticleCard2
               image={scienceData[2].image}
               title={scienceData[2].title}
@@ -183,18 +323,26 @@ export default function Home() {
               fontSize="1.10rem"
             />
           </div>
-
-        </div>
-
-                <div className="row py-5">
-          <div className="col-lg-4">
+          <div className="col-lg-3">
             <ArticleCard2
-              image={sportsData[0].image}
-              title={sportsData[0].title}
-              category={sportsData[0].category}
+              image={scienceData[3].image}
+              title={scienceData[3].title}
+              category={scienceData[3].category}
               fontSize="1.10rem"
             />
           </div>
+        </div>
+                  <div className="col-lg-12 border-black border-bottom">
+            <h2>Sports</h2>
+          </div>
+        <div className="col-lg-8 py-3">
+          <ArticleCard3
+            image={sportsData[2].image}
+            category={sportsData[2].category}
+            title={sportsData[2].title}
+            shortdescription={sportsData[2].shortdescription}
+          />
+                  <div className="row py-5">
           <div className="col-lg-4">
             <ArticleCard2
               image={sportsData[1].image}
@@ -203,26 +351,25 @@ export default function Home() {
               fontSize="1.10rem"
             />
           </div>
-        </div>
-               <div className="row py-5">
           <div className="col-lg-4">
             <ArticleCard2
-              image={healthData[1].image}
-              title={healthData[1].title}
-              category={healthData[1].category}
+              image={sportsData[0].image}
+              title={sportsData[0].title}
+              category={sportsData[0].category}
               fontSize="1.10rem"
             />
           </div>
-          <div className="col-lg-4">
+                    <div className="col-lg-4">
             <ArticleCard2
-              image={healthData[0].image}
-              title={healthData[0].title}
-              category={healthData[0].category}
+              image={technologyData[3].image}
+              title={technologyData[3].title}
+              category={technologyData[3].category}
               fontSize="1.10rem"
             />
           </div>
         </div>
-        
+        </div>
+
       </div>
     </div>
   );

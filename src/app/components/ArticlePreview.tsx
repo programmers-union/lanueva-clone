@@ -18,10 +18,10 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
       </p>
 
       {/* Title */}
-      <h2 className="ArticlePreview-title fw-bold mb-3">
+      <h1 className="ArticlePreview-title fw-bold mb-3">
         {title}
         {/* <span className="ArticlePreview-highlight"> {highlight}</span> */}
-      </h2>
+      </h1>
 
       {/* Author */}
       <p className="ArticlePreview-author text-uppercase text-muted fw-semibold mb-2">
