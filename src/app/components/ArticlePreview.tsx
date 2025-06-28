@@ -1,17 +1,26 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
 
 interface ArticlePreviewProps {
   title: string;
   shortdescription: string;
+  slug:string;
+  category:string
 }
 
 const ArticlePreview: React.FC<ArticlePreviewProps> = ({
   title,
   shortdescription,
+  slug,
+  category
 }) => {
+  // const linkHref = `/${category.toLowerCase()}/${slug}`;
+  // console.log('ArticlePreview generating link:', linkHref);
+  // console.log('Props:', { title, shortdescription, slug, category });
   return (
-    <div className="ArticlePreview-container container py-4">
+   <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
+  <div className="ArticlePreview-container container py-4">
       {/* Location */}
       <p className="ArticlePreview-location text-uppercase text-muted fw-semibold mb-2">
         US
@@ -33,6 +42,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
         {shortdescription}
       </p>
     </div>
+      </Link>
   );
 };
 

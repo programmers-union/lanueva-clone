@@ -44,42 +44,28 @@ const Header = () => {
                 </div>
               </div>
               
-              <div className="col-lg-8 col-md-6 d-none d-lg-block">
+              <div className="col-lg-8 col-md-6 d-none d-lg-block ">
                 <nav className="position-relative">
-                  <ul className={`newsHeader-nav-list ${isMenuOpen ? 'show' : ''}`}>
+                  <ul className={`newsHeader-nav-list ${isMenuOpen ? 'show' : ''}d-flex justify-content-center`}>
                     <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Asturias</a>
+                      <a href="#" className="newsHeader-nav-link">Business</a>
                     </li>
                     <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Oviedo</a>
+                      <a href="#" className="newsHeader-nav-link">Politics</a>
                     </li>
                     <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Gijón</a>
+                      <a href="#" className="newsHeader-nav-link">Technology</a>
                     </li>
                     <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Avilés</a>
+                      <a href="#" className="newsHeader-nav-link">Science</a>
                     </li>
                     <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Cuencas</a>
+                      <a href="#" className="newsHeader-nav-link">Health</a>
                     </li>
                     <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Oriente</a>
+                      <a href="#" className="newsHeader-nav-link">Sports</a>
                     </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Occidente</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Opinión</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Sucesos</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Economía</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Deportes</a>
-                    </li>
+                   
                   </ul>
                 </nav>
               </div>
@@ -155,17 +141,14 @@ const Header = () => {
               <div className="col-12">
                 <nav>
                   <ul className="newsHeader-local-nav d-none d-sm-flex ">
-                    <li className="newsHeader-local-title">Ediciones locales</li>
-                    <li><a href="#" className="newsHeader-local-link">Siero</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Llanera</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Villaviciosa</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Corvera</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Cangas del Narcea</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Grado</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Salas</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Ribera de Arriba</a></li>
-                    <li><a href="#" className="newsHeader-local-link">La Corredoría</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Gijón Oeste</a></li>
+                    <li className="newsHeader-local-title">Local Editions</li>
+                    <li><a href="#" className="newsHeader-local-link">Business</a></li>
+                    <li><a href="#" className="newsHeader-local-link">Politics</a></li>
+                    <li><a href="#" className="newsHeader-local-link">Technology</a></li>
+                    <li><a href="#" className="newsHeader-local-link">Science</a></li>
+                    <li><a href="#" className="newsHeader-local-link">Health</a></li>
+                    <li><a href="#" className="newsHeader-local-link">Sports</a></li>
+                    
                   </ul>
                 </nav>
               </div>

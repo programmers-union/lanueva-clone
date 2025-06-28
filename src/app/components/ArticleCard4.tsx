@@ -1,11 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
 interface ArticleCard4Props {
   image: string;
   category: string;
   title: string;
   author: string;
+  slug:string;
 }
 
 const ArticleCard4: React.FC<ArticleCard4Props> = ({
@@ -13,8 +15,10 @@ const ArticleCard4: React.FC<ArticleCard4Props> = ({
   category,
   title,
   author,
+  slug
 }) => {
   return (
+    <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
     <div className="ArticleCard4-container row g-3 align-items-start mb-3">
       {/* Image column */}
       <div className="col-4 position-relative">
@@ -29,6 +33,7 @@ const ArticleCard4: React.FC<ArticleCard4Props> = ({
         <p className="text-uppercase text-muted fw-semibold ArticleCard4-author">{author}</p>
       </div>
     </div>
+    </Link>
   );
 };
 

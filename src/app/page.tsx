@@ -19,6 +19,8 @@ export default function Home() {
               <ArticlePreview
                 title={businessData[3].title}
                 shortdescription={businessData[3].shortdescription}
+                slug={businessData[3].slug}
+                category={businessData[3].category}
               />
             </div>
             <div>
@@ -26,6 +28,7 @@ export default function Home() {
                 image={businessData[2].image}
                 title={businessData[2].title}
                 category={businessData[2].category}
+                slug={businessData[2].slug}
                 fontSize="1.30rem"
               />
             </div>
@@ -36,6 +39,7 @@ export default function Home() {
               category={politicsData[0].category}
               title={politicsData[0].title}
               shortdescription={politicsData[0].shortdescription}
+              slug={politicsData[0].slug}
             />
           </div>
         </div>
@@ -45,6 +49,7 @@ export default function Home() {
               image={scienceData[1].image}
               title={scienceData[1].title}
               category={scienceData[1].category}
+              slug={scienceData[1].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -53,6 +58,7 @@ export default function Home() {
               image={scienceData[0].image}
               title={scienceData[0].title}
               category={scienceData[0].category}
+              slug={scienceData[0].category}
               fontSize="1.10rem"
             />
           </div>
@@ -61,6 +67,7 @@ export default function Home() {
               image={scienceData[2].image}
               title={scienceData[2].title}
               category={scienceData[2].category}
+              slug={scienceData[2].category}
               fontSize="1.10rem"
             />
           </div>
@@ -69,6 +76,7 @@ export default function Home() {
               image={scienceData[3].image}
               title={scienceData[3].title}
               category={scienceData[3].category}
+              slug={scienceData[3].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -80,6 +88,7 @@ export default function Home() {
               image={healthData[1].image}
               title={healthData[1].title}
               category={healthData[1].category}
+              slug={healthData[1].category}
               fontSize="1.10rem"
             />
           </div>
@@ -88,6 +97,7 @@ export default function Home() {
               image={healthData[0].image}
               title={healthData[0].title}
               category={healthData[0].category}
+              slug={healthData[0].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -98,6 +108,7 @@ export default function Home() {
               image={sportsData[0].image}
               title={sportsData[0].title}
               category={sportsData[0].category}
+              slug={sportsData[0].category}
               fontSize="1.10rem"
             />
           </div>
@@ -106,6 +117,7 @@ export default function Home() {
               image={sportsData[1].image}
               title={sportsData[1].title}
               category={sportsData[1].category}
+              slug={sportsData[1].category}
               fontSize="1.10rem"
             />
           </div>
@@ -116,6 +128,7 @@ export default function Home() {
               image={politicsData[3].image}
               title={politicsData[3].title}
               category={politicsData[3].category}
+              slug={politicsData[3].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -124,6 +137,7 @@ export default function Home() {
               image={politicsData[1].image}
               title={politicsData[1].title}
               category={politicsData[1].category}
+              slug={politicsData[1].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -136,6 +150,7 @@ export default function Home() {
               category={politicsData[5].category}
               title={politicsData[5].title}
               shortdescription={politicsData[5].shortdescription}
+              slug={politicsData[5].slug}
             />
           </div>
           <div className="col-lg-6">
@@ -143,18 +158,21 @@ export default function Home() {
               image={politicsData[2].image} // Place this in public/images/
               category={politicsData[2].category}
               title={politicsData[2].title}
+              slug={politicsData[2].slug}
               author="Reporter"
             />
             <ArticleCard4
               image={politicsData[4].image} // Place this in public/images/
               category={politicsData[4].category}
               title={politicsData[4].title}
+              slug={politicsData[4].slug}
               author="Reporter"
             />
             <ArticleCard4
               image={politicsData[6].image} // Place this in public/images/
               category={politicsData[6].category}
               title={politicsData[6].title}
+              slug={politicsData[6].slug}
               author="Reporter"
             />
           </div>
@@ -165,6 +183,7 @@ export default function Home() {
               image={scienceData[6].image}
               title={scienceData[6].title}
               category={scienceData[6].category}
+              slug={scienceData[6].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -173,6 +192,7 @@ export default function Home() {
               image={scienceData[4].image}
               title={scienceData[4].title}
               category={scienceData[4].category}
+              slug={scienceData[4].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -181,6 +201,7 @@ export default function Home() {
               image={scienceData[5].image}
               title={scienceData[5].title}
               category={scienceData[5].category}
+              slug={scienceData[4].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -192,6 +213,7 @@ export default function Home() {
               image={businessData[4].image}
               title={businessData[4].title}
               category={businessData[4].category}
+              slug={businessData[4].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -200,6 +222,7 @@ export default function Home() {
               image={businessData[5].image}
               title={businessData[5].title}
               category={businessData[5].category}
+              slug={businessData[5].category}
               fontSize="1.10rem"
             />
           </div>
@@ -210,6 +233,7 @@ export default function Home() {
               image={businessData[6].image}
               title={businessData[6].title}
               category={businessData[6].category}
+              slug={businessData[6].category}
               fontSize="1.10rem"
             />
           </div>
@@ -218,6 +242,7 @@ export default function Home() {
               image={businessData[7].image}
               title={businessData[7].title}
               category={businessData[7].category}
+              slug={businessData[7].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -232,6 +257,7 @@ export default function Home() {
               category={politicsData[8].category}
               title={politicsData[8].title}
               shortdescription={politicsData[8].shortdescription}
+              slug={politicsData[8].slug}
             />
           </div>
           <div className="col-lg-6">
@@ -239,18 +265,21 @@ export default function Home() {
               image={politicsData[2].image} // Place this in public/images/
               category={politicsData[2].category}
               title={politicsData[2].title}
+              slug={politicsData[2].slug}
               author="Reporter"
             />
             <ArticleCard4
               image={politicsData[4].image} // Place this in public/images/
               category={politicsData[4].category}
               title={politicsData[4].title}
+              slug={politicsData[4].slug}
               author="Reporter"
             />
             <ArticleCard4
               image={politicsData[6].image} // Place this in public/images/
               category={politicsData[6].category}
               title={politicsData[6].title}
+              slug={politicsData[6].slug}
               author="Reporter"
             />
           </div>
@@ -265,6 +294,7 @@ export default function Home() {
             category={technologyData[0].category}
             title={technologyData[0].title}
             shortdescription={technologyData[0].shortdescription}
+            slug={technologyData[0].slug}
           />
                   <div className="row py-5">
           <div className="col-lg-4">
@@ -272,6 +302,7 @@ export default function Home() {
               image={technologyData[1].image}
               title={technologyData[1].title}
               category={technologyData[1].category}
+              slug={technologyData[1].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -280,6 +311,7 @@ export default function Home() {
               image={technologyData[2].image}
               title={technologyData[2].title}
               category={technologyData[2].category}
+              slug={technologyData[2].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -288,6 +320,7 @@ export default function Home() {
               image={technologyData[3].image}
               title={technologyData[3].title}
               category={technologyData[3].category}
+              slug={technologyData[3].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -304,6 +337,7 @@ export default function Home() {
               image={scienceData[1].image}
               title={scienceData[1].title}
               category={scienceData[1].category}
+              slug={scienceData[1].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -312,6 +346,7 @@ export default function Home() {
               image={scienceData[0].image}
               title={scienceData[0].title}
               category={scienceData[0].category}
+              slug={scienceData[0].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -320,6 +355,7 @@ export default function Home() {
               image={scienceData[2].image}
               title={scienceData[2].title}
               category={scienceData[2].category}
+              slug={scienceData[2].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -328,6 +364,7 @@ export default function Home() {
               image={scienceData[3].image}
               title={scienceData[3].title}
               category={scienceData[3].category}
+              slug={scienceData[3].slug}
               fontSize="1.10rem"
             />
           </div>
@@ -341,6 +378,7 @@ export default function Home() {
             category={sportsData[2].category}
             title={sportsData[2].title}
             shortdescription={sportsData[2].shortdescription}
+            slug={sportsData[2].slug}
           />
                   <div className="row py-5">
           <div className="col-lg-4">
@@ -348,6 +386,7 @@ export default function Home() {
               image={sportsData[1].image}
               title={sportsData[1].title}
               category={sportsData[1].category}
+              slug={sportsData[1].category}
               fontSize="1.10rem"
             />
           </div>
@@ -356,6 +395,7 @@ export default function Home() {
               image={sportsData[0].image}
               title={sportsData[0].title}
               category={sportsData[0].category}
+              slug={sportsData[0].category}
               fontSize="1.10rem"
             />
           </div>
@@ -364,6 +404,7 @@ export default function Home() {
               image={technologyData[3].image}
               title={technologyData[3].title}
               category={technologyData[3].category}
+              slug={technologyData[3].slug}
               fontSize="1.10rem"
             />
           </div>
