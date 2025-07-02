@@ -1,163 +1,153 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const navItems = [
+  { label: 'Business',   slug: 'business'   },
+  { label: 'Technology', slug: 'technology' },
+  { label: 'Sports',     slug: 'sports'     },
+  { label: 'Health',     slug: 'health'     },
+  { label: 'Science',    slug: 'science'    },
+  { label: 'Politics',   slug: 'politics'   },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 100); // Adjust threshold as needed
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  /** Creates one <li> for any nav zone (desktop, mobile, local‑editions) */
+  const renderNavLinks = (extraClass = '') =>
+    navItems.map(({ label, slug }) => {
+      const href = `/${slug}`;
+      const isActive = pathname === href;
+      return (
+        <li key={slug} className={`newsHeader-nav-item ${extraClass}`}>
+          <Link
+            href={href}
+            className={`newsHeader-nav-link ${isActive ? 'active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}  // close drawer on mobile tap
+          >
+            {label}
+          </Link>
+        </li>
+      );
+    });
 
   return (
-    <>
+    <header className={`newsHeader-container ${isScrolled ? 'scrolled' : ''}`}>
+      {/* ---------- Top Bar ---------- */}
+      <div className={`newsHeader-top-bar ${isScrolled ? 'hidden' : ''}`}>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12 d-flex justify-content-end align-items-center">
+              <span>Contenidos Web 2 €/mes + regalo 🎁</span>
+              <button className="newsHeader-subscribe-btn">SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      {/* ---------- Main Navigation ---------- */}
+      <div className={`newsHeader-main-nav border-top border-bottom ${isScrolled ? 'hidden' : ''}`}>
+        <div className="container-fluid">
+          <div className="row align-items-center">
+            {/* Logo + mobile burger */}
+            <div className="col-lg-2 col-md-3 col-6">
+              <div className="d-flex align-items-center">
+                <button
+                  className="newsHeader-mobile-toggle d-lg-none me-3"
+                  onClick={toggleMenu}
+                  aria-label="Toggle menu"
+                >
+                  ☰
+                </button>
+                <Link href="/" className="newsHeader-logo">
+                  Asturias <small>LNE</small>
+                </Link>
+              </div>
+            </div>
 
-      <header className="newsHeader-container">
-        {/* Top Bar */}
-        <div className="newsHeader-top-bar">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-12 d-flex justify-content-end align-items-center">
-                <span>Contenidos Web 2 €/mes + regalo 🎁</span>
-                <button className="newsHeader-subscribe-btn">SUSCRÍBETE</button>
+            {/* Desktop nav */}
+            <div className="col-lg-8 col-md-6 d-none d-lg-block">
+              <nav className="position-relative">
+                <ul className="newsHeader-nav-list d-flex justify-content-center">
+                  {renderNavLinks()}
+                </ul>
+              </nav>
+            </div>
+
+            {/* Icons */}
+            <div className="col-lg-2 col-md-3 col-6">
+              <div className="d-flex justify-content-end align-items-center">
+                <button className="newsHeader-search-btn me-2">🔍</button>
+                <button className="newsHeader-user-btn">👤</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Main Navigation */}
-        <div className="newsHeader-main-nav border-top border-bottom">
-          <div className="container-fluid">
-            <div className="row align-items-center">
-              <div className="col-lg-2 col-md-3 col-6">
-                <div className="d-flex align-items-center">
-                  <button 
-                    className="newsHeader-mobile-toggle d-lg-none me-3"
-                    onClick={toggleMenu}
-                  >
-                    ☰
-                  </button>
-                  <a href="#" className="newsHeader-logo">
-                    Asturias <small>LNE</small>
-                  </a>
-                </div>
-              </div>
-              
-              <div className="col-lg-8 col-md-6 d-none d-lg-block ">
-                <nav className="position-relative">
-                  <ul className={`newsHeader-nav-list ${isMenuOpen ? 'show' : ''}d-flex justify-content-center`}>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Business</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Politics</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Technology</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Science</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Health</a>
-                    </li>
-                    <li className="newsHeader-nav-item">
-                      <a href="#" className="newsHeader-nav-link">Sports</a>
-                    </li>
-                   
-                  </ul>
-                </nav>
-              </div>
+      {/* ---------- Mobile drawer ---------- */}
+      <div className="d-lg-none">
+        <nav className={`position-relative ${isMenuOpen ? 'show' : ''}`}>
+          <ul className="newsHeader-nav-list">{renderNavLinks()}</ul>
+        </nav>
+      </div>
 
-              <div className="col-lg-2 col-md-3 col-6">
-                <div className="d-flex justify-content-end align-items-center">
-                  <button className="newsHeader-search-btn me-2">
-                    🔍
-                  </button>
-                  <button className="newsHeader-user-btn">
-                    👤
-                  </button>
+      {/* ---------- Title with Icons when scrolled ---------- */}
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-12">
+            <div className={`newsHeader-title-section ${isScrolled ? 'with-icons' : ''}`}>
+              <h1 className="newsHeader-title">La Nueva España</h1>
+              {/* Icons appear in title section when scrolled */}
+              {isScrolled && (
+                <div className="newsHeader-scrolled-icons">
+                  <button className="newsHeader-search-btn me-2">🔍</button>
+                  <button className="newsHeader-user-btn">👤</button>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        <div className="d-lg-none">
-          <nav className="position-relative">
-            <ul className={`newsHeader-nav-list ${isMenuOpen ? 'show' : ''}`}>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Asturias</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Oviedo</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Gijón</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Avilés</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Cuencas</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Oriente</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Occidente</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Opinión</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Sucesos</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Economía</a>
-              </li>
-              <li className="newsHeader-nav-item">
-                <a href="#" className="newsHeader-nav-link">Deportes</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        {/* Title */}
+      {/* ---------- Local Editions ---------- */}
+      <div className={`newsHeader-local-editions border-top ${isScrolled ? 'hidden' : ''}`}>
         <div className="container-fluid">
           <div className="row">
             <div className="col-12">
-              <h1 className="newsHeader-title">La Nueva España</h1>
+              <nav>
+                <ul className="newsHeader-local-nav d-none d-sm-flex">
+                  <li className="newsHeader-local-title">Local Editions</li>
+                  {renderNavLinks('newsHeader-local-link')}
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
-
-        {/* Local Editions */}
-        <div className="newsHeader-local-editions border-top">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-12">
-                <nav>
-                  <ul className="newsHeader-local-nav d-none d-sm-flex ">
-                    <li className="newsHeader-local-title">Local Editions</li>
-                    <li><a href="#" className="newsHeader-local-link">Business</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Politics</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Technology</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Science</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Health</a></li>
-                    <li><a href="#" className="newsHeader-local-link">Sports</a></li>
-                    
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 
 export default Header;
+
+
