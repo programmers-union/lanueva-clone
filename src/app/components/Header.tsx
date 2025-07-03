@@ -111,32 +111,28 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* ---------- Title with Icons when scrolled ---------- */}
+      {/* ---------- Title Section (Always Visible) ---------- */}
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">
-            <div className={`newsHeader-title-section ${isScrolled ? 'with-icons' : ''}`}>
-              <h1 className="newsHeader-title">La Nueva España</h1>
-              {/* Icons appear in title section when scrolled */}
-              {isScrolled && (
-                <div className="newsHeader-scrolled-icons">
-                  <button className="newsHeader-search-btn me-2">🔍</button>
-                  <button className="newsHeader-user-btn">👤</button>
-                </div>
-              )}
+            <div className="newsHeader-title-section">
+              <Link href='/' className='newsHeader-title'>
+              <h1 className="newsHeader-title ">La Nueva España</h1>
+              </Link>
+              
             </div>
           </div>
         </div>
       </div>
 
       {/* ---------- Local Editions ---------- */}
-      <div className={`newsHeader-local-editions border-top ${isScrolled ? 'hidden' : ''}`}>
+      <div className="newsHeader-local-editions border-top">
         <div className="container-fluid">
           <div className="row">
             <div className="col-12">
               <nav>
                 <ul className="newsHeader-local-nav d-none d-sm-flex">
-                  <li className="newsHeader-local-title">Local Editions</li>
+                  <li className="newsHeader-local-title py-2">Local Editions</li>
                   {renderNavLinks('newsHeader-local-link')}
                 </ul>
               </nav>
@@ -149,5 +145,3 @@ const Header = () => {
 };
 
 export default Header;
-
-

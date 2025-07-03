@@ -229,7 +229,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 title={filteredArticles[15].title}
                 category={filteredArticles[15].category}
                 slug={filteredArticles[15].slug}
-                fontSize="1.30rem"
+                fontSize="1.30rem"            
               />
                         </div>
                     </div>

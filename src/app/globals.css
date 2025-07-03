@@ -144,15 +144,9 @@ h2:hover{
   transition: all 0.3s ease;
 }
 
-.newsHeader-title-section.with-icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
 .newsHeader-title {
   text-align: center;
+  text-decoration: none;
   font-family: 'Times New Roman', serif;
   font-size: 48px;
   font-weight: bold;
@@ -160,28 +154,6 @@ h2:hover{
   margin: 20px 0;
   font-style: italic;
   transition: all 0.3s ease;
-}
-
-.newsHeader-title-section.with-icons .newsHeader-title {
-  margin: 0;
-  font-size: 32px;
-  text-align: left;
-  flex-grow: 1;
-}
-
-.newsHeader-scrolled-icons {
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInUp 0.3s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .newsHeader-local-editions {
@@ -250,37 +222,14 @@ h2:hover{
     font-size: 36px;
   }
 
-  .newsHeader-title-section.with-icons .newsHeader-title {
-    font-size: 24px;
-  }
-
   .newsHeader-local-nav {
     gap: 20px;
-  }
-
-  /* Mobile scrolled state adjustments */
-  .newsHeader-container.scrolled .col-8 {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
-
-  .newsHeader-container.scrolled .col-4 {
-    flex: 0 0 25%;
-    max-width: 25%;
   }
 }
 
 @media (max-width: 767px) {
   .newsHeader-title {
     font-size: 28px;
-  }
-
-  .newsHeader-title-section.with-icons .newsHeader-title {
-    font-size: 20px;
-  }
-
-  .newsHeader-title-section.with-icons {
-    padding: 10px 15px;
   }
 
   .newsHeader-local-nav {
@@ -305,19 +254,6 @@ h2:hover{
     width: 100%;
     margin: 0 auto;
   }
-
-  /* Mobile specific scrolled adjustments */
-  .newsHeader-container.scrolled .newsHeader-search-btn,
-  .newsHeader-container.scrolled .newsHeader-user-btn {
-    font-size: 16px;
-    padding: 6px;
-  }
-
-  .newsHeader-scrolled-icons .newsHeader-search-btn,
-  .newsHeader-scrolled-icons .newsHeader-user-btn {
-    font-size: 16px;
-    padding: 6px;
-  }
 }
 
 @media (max-width: 575px) {
@@ -327,27 +263,8 @@ h2:hover{
     gap: 10px;
   }
 
-  .newsHeader-title-section.with-icons {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .newsHeader-title-section.with-icons .newsHeader-title {
-    text-align: center;
-    font-size: 18px;
-  }
-
-  /* Small mobile scrolled state */
-  .newsHeader-container.scrolled .newsHeader-logo {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .newsHeader-scrolled-icons .newsHeader-search-btn,
-  .newsHeader-scrolled-icons .newsHeader-user-btn {
-    font-size: 14px;
-    padding: 4px;
+  .newsHeader-title {
+    font-size: 24px;
   }
 }
 
