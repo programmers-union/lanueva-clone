@@ -484,3 +484,21 @@ h2:hover{
     figure img { max-height: 320px; }
   }
 }
+
+
+ /* ................................footer styles.......................................... */
+
+ .footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .footer-brand {
+  font-family: 'Times New Roman', serif;
+  font-size: 28px;
+  font-style: italic;
+}
